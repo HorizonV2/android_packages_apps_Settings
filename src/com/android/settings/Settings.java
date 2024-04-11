@@ -531,4 +531,7 @@ public class Settings extends SettingsActivity {
     
     /** Personalizations Activities **/
     public static class HorizonlabSettingsActivity extends SettingsActivity {}
+
+    public static class PrivateDnsSettingsActivity extends SettingsActivity { /* empty */ }
+
 }
