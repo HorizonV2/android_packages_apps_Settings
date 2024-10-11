@@ -211,6 +211,12 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
+import com.horizon.lab.category.AboutTeamFragment;
+import com.horizon.lab.category.QuickSettings;
+import com.horizon.lab.category.Statusbar;
+
+import com.horizon.lab.HorizonDashboard;
+
 public class SettingsGateway {
 
     /**
@@ -428,6 +434,10 @@ public class SettingsGateway {
             Settings.AccessibilitySettingsActivity.class.getName(),
             Settings.SystemDashboardActivity.class.getName(),
             SupportDashboardActivity.class.getName(),
+            AboutTeamFragment.class.getName(),
+            QuickSettings.class.getName(),
+            Statusbar.class.getName(),
+            HorizonDashboard.class.getName(),
             // Home page > Network & Internet
             Settings.WifiSettingsActivity.class.getName(),
             Settings.DataUsageSummaryActivity.class.getName(),
@@ -456,5 +466,11 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
+            Settings.HorizonlabSettingsActivity.class.getName(),
+
+            // Labs 
+            Settings.AboutTeamActivity.class.getName(),
+            Settings.QuickSettingsActivity.class.getName(),
+            Settings.StatusbarActivity.class.getName(),
     };
 }

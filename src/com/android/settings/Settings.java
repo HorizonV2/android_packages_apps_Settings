@@ -495,6 +495,11 @@ public class Settings extends SettingsActivity {
     public static class AccountDashboardActivity extends SettingsActivity {}
     public static class SystemDashboardActivity extends SettingsActivity {}
 
+    /** Activity for Labs settings. */
+    public static class AboutTeamActivity extends SettingsActivity { /* empty */ }
+    public static class QuickSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class StatusbarActivity extends SettingsActivity { /* empty */ }
+
     /**
      * Activity for MediaControlsSettings
      */
@@ -522,4 +527,7 @@ public class Settings extends SettingsActivity {
     public static class HearingDevicesActivity extends SettingsActivity { /* empty */ }
     public static class HearingDevicesPairingActivity extends SettingsActivity { /* empty */ }
     public static class ContactsStorageSettingsActivity extends SettingsActivity { /* empty */ }
+    
+    /** Personalizations Activities **/
+    public static class HorizonlabSettingsActivity extends SettingsActivity {}
 }

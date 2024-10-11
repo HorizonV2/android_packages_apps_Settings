@@ -1,0 +1,2 @@
+# HorizonLab
+-keep class com.horizon.lab.**
