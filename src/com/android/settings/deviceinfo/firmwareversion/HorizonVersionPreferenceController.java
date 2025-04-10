@@ -35,17 +35,20 @@ import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 
-public class LineageVersionDetailPreferenceController extends BasePreferenceController {
+public class HorizonVersionPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "lineageVersionDialogCtrl";
+    private static final String TAG = "HorizonVersionDialogCtrl";
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
+    private static final String KEY_HORIZON_CODENAME_PROP = "ro.horizon.codename";
+    private static final String KEY_HORIZON_REVISION_PROP = "ro.horizon.revision";
+    private static final String KEY_HORIZON_DEVICE_PROP = "ro.horizon.device";
+    private static final String KEY_HORIZON_RELEASETYPE_PROP = "ro.horizon.releasetype";
 
-    private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
+    private static final String PLATLOGO_PACKAGE_NAME = "com.android.egg";
     private static final String PLATLOGO_ACTIVITY_CLASS =
-            PLATLOGO_PACKAGE_NAME + ".logo.PlatLogoActivity";
+            PLATLOGO_PACKAGE_NAME + ".EasterEgg";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
@@ -53,7 +56,7 @@ public class LineageVersionDetailPreferenceController extends BasePreferenceCont
     private RestrictedLockUtils.EnforcedAdmin mFunDisallowedAdmin;
     private boolean mFunDisallowedBySystem;
 
-    public LineageVersionDetailPreferenceController(Context context, String key) {
+    public HorizonVersionPreferenceController(Context context, String key) {
         super(context, key);
         mUserManager = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
         initializeAdminPermissions();
@@ -76,8 +79,7 @@ public class LineageVersionDetailPreferenceController extends BasePreferenceCont
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_LINEAGE_VERSION_PROP,
-                mContext.getString(R.string.unknown));
+        return displayHorizonVersion();
     }
 
     @Override
@@ -109,6 +111,19 @@ public class LineageVersionDetailPreferenceController extends BasePreferenceCont
             }
         }
         return true;
+    }
+
+    private String displayHorizonVersion() {
+        String horizonRevision = SystemProperties.get(KEY_HORIZON_REVISION_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String horizonCodename = SystemProperties.get(KEY_HORIZON_CODENAME_PROP,
+                this.mContext.getString(R.string.device_info_default));
+	String horizonDevice = SystemProperties.get(KEY_HORIZON_DEVICE_PROP,
+		this.mContext.getString(R.string.device_info_default));
+        String horizonReleaseType = SystemProperties.get(KEY_HORIZON_RELEASETYPE_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String horizonVersion = horizonRevision + " | " + horizonCodename + " | " + horizonDevice + " | " + horizonReleaseType;
+        return horizonVersion;
     }
 
     /**
