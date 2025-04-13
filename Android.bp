@@ -153,6 +153,10 @@ android_library {
         "android.security.flags-aconfig",
         "keyboard_flags",
     ],
+
+additional_manifests: [
+        "CustomManifest.xml"
+    ],
     
 }
 
