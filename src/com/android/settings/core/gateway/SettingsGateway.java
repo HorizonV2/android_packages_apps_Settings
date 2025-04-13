@@ -415,7 +415,11 @@ public class SettingsGateway {
             HearingDevicePairingFragment.class.getName(),
             ZenModesListFragment.class.getName(),
             ZenModeFragment.class.getName(),
-            ContactsStorageSettings.class.getName()
+            ContactsStorageSettings.class.getName(),
+            AboutTeamFragment.class.getName(),
+            QuickSettings.class.getName(),
+            Statusbar.class.getName(),
+            HorizonDashboard.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -434,10 +438,6 @@ public class SettingsGateway {
             Settings.AccessibilitySettingsActivity.class.getName(),
             Settings.SystemDashboardActivity.class.getName(),
             SupportDashboardActivity.class.getName(),
-            AboutTeamFragment.class.getName(),
-            QuickSettings.class.getName(),
-            Statusbar.class.getName(),
-            HorizonDashboard.class.getName(),
             // Home page > Network & Internet
             Settings.WifiSettingsActivity.class.getName(),
             Settings.DataUsageSummaryActivity.class.getName(),
