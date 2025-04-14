@@ -121,6 +121,7 @@ android_library {
         "setupdesign-lottie-loading-layout",
         "device_policy_aconfig_flags_lib",
         "keyboard_flags_lib",
+        "custom-preference",
 
         // Lineage dependencies
         "org.lineageos.platform.internal",
